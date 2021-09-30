@@ -59,3 +59,8 @@ def status():
     else:
         print("Full shield ")
 print(status())
+
+#Another way for status would be the following:
+# print("Please enter number of lives")
+# lives = int(input())
+# print(f"Lives:  {'♥' * lives}")
