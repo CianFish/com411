@@ -1,5 +1,4 @@
 #while
-#for
 
 count = 0
 
