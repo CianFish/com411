@@ -16,9 +16,9 @@ def run():
 
     if sora == "sum":
         print(sum_weight(Beep, Bop))
-        print(f"The sum of Beep and Bop's weight is {sum}")
+        print(f"The sum of Beep and Bop's weight is {sum_weight(Beep,Bop)}")
     else:
         print(calc_avg_weight(Beep, Bop))
-        print(f"The average of Beep and Bop's weight is {avg}")
+        print(f"The average of Beep and Bop's weight is {calc_avg_weight(Beep,Bop)}")
 
 run()
