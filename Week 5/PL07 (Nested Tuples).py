@@ -6,8 +6,14 @@ def run():
     step = steps()
     good_steps = []
     bad_steps = []
-    for list in range(len(step)):
-        if list => 50:
-            good_steps.append()
+    for stepz in step:
+        if (stepz[1] >= 50):
+            good_steps.append(stepz)
         else:
-            bad_steps.append()
+            bad_steps.append(stepz)
+
+
+    print(f"Good steps: {len(good_steps)}, Bad steps: {len(bad_steps)}")
+
+if __name__ == "__main__":
+    run()
