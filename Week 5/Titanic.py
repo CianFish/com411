@@ -78,7 +78,37 @@ def display_passengers_per_age_group():
     print(f"children: {children}, adults: {adults}, elderly: {elderly}")
 
 def display_survivors_per_age_group():
+    child_sur = 0
+    adult_sur = 0
+    elder_sur = 0
 
+    child_tot = 0
+    adult_tot = 0
+    elder_tot = 0
+
+    for record in records:
+        if record[5] != "":
+            age = float(record[5])
+            if age < 18:
+                    child_tot += 1
+            elif age < 65 and age >= 18:
+                    adult_tot += 1
+            elif age >= 65:
+                    elder_tot += 1
+
+    for record in records:
+        survival_status = int(record[1])
+        if survival_status == 1:
+            if record[5] != "":
+                age = float(record[5])
+                if age < 18:
+                    child_sur += 1
+                elif age < 65 and age >= 18:
+                    adult_sur += 1
+                elif age >= 65:
+                    elder_sur += 1
+
+    print(f"children: {child_sur}/{child_tot}, adults: {adult_sur}/{adult_tot}, elderly: {elder_sur}/{elder_tot}")
 
 def run():
     load_data("Titanic data.csv")
@@ -93,6 +123,8 @@ def run():
         display_passengers_per_gender()
     elif selected_option == 4:
         display_passengers_per_age_group()
+    elif selected_option == 5:
+        display_survivors_per_age_group()
 
 
 
