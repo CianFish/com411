@@ -23,14 +23,13 @@ def run():
         if selection == "years":
             process.list_years(athlete_data)
         elif selection == "tally":
-            pass
+            process.tally_medals(athlete_data)
         elif selection == "team":
             pass
         elif selection == "exit":
             break
         else:
             tui.error("Invalid Selection!")
-
 
 if __name__ == "__main__":
     run()
