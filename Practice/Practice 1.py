@@ -7,11 +7,15 @@ def temps(file_path):
     s = []
     b = []
     n = []
+
+
     with open(file_path) as file:
         csv_reader = csv.reader(file)
         temp.append(csv_reader)
         heading = next(csv_reader)
         for values in csv_reader:
+            mi = values[9]
+
             if values[14] == "Gold":
                 g.append("i")
             elif values[14] == "Silver":
@@ -20,14 +24,38 @@ def temps(file_path):
                 b.append("a")
             elif values[14] == "NA":
                 n.append("A")
-            mi = min(values[9])
-            ma = max(values[9])
-        print(f"There were {len(g)} gold medals altogether between {mi} and {ma}")
-        print(f"There were {len(s)} silver medals altogether")
-        print(f"There were {len(b)} bronze medals altogether")
+
+    return g, s, b
+
+def minimum(file_path):
+    with open(file_path) as file:
+        csv_reader = csv.reader(file)
+        next(csv_reader)
+        mi = 2022
+        for row in csv_reader:
+            if int(row[9]) < mi:
+                mi = int(row[9])
+
+    return mi
+
+def maximum(file_path):
+        with open(file_path) as file:
+            csv_reader = csv.reader(file)
+            next(csv_reader)
+            ma = 1900
+            for row in csv_reader:
+                if int(row[9]) > ma:
+                    ma = int(row[9])
+        return ma
 
 def run():
-    temps("athlete.csv")
+    a = temps("athlete.csv")
+    mb = minimum("athlete.csv")
+    mc = maximum("athlete.csv")
+
+    print(f"There were {len(a[0])} gold medals altogether between {mb} and {mc}")
+    print(f"There were {len(a[1])} silver medals altogether between {mb} and {mc}")
+    print(f"There were {len(a[2])} bronze medals altogether between {mb} and {mc}")
 
 
 if __name__ == "__main__":
