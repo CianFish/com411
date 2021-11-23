@@ -1,7 +1,10 @@
 import matplotlib.pyplot as plt
 
-x = [1,2,3,4,5]
-y = [1,4,9,16,25]
+def read_data(file_path):
+    with open(file_path) as file:
 
-plt.plot(x, y)
+
+
+
+
 plt.show()

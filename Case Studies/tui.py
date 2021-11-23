@@ -25,12 +25,12 @@ def menu():
 
 def display_medal_tally(tally):
     print(f"""
-    {'Gold':<10} | {tally['Gold']:10}
-    {'Silver':<10} | {tally['Silver']:5}
-    {'Bronze':<10} | {tally['Bronze']:2} 
+    {'Gold':<10} | {tally['Gold']:<10}
+    {'Silver':<10} | {tally['Silver']:<5}
+    {'Bronze':<10} | {tally['Bronze']:<2} 
     """)
 
-def display_medal_tally(team_tally):
+def display_team_tally(team_tally):
     for team, tally in range(team_tally):
         print(team)
         print(f"Gold: {tally['Gold']}, Silver: {tally['Silver']}, Bronze: {tally['Bronze']}")
