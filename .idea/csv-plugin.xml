@@ -31,13 +31,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\Week 5\Titanic data.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
       </map>
     </option>
   </component>
